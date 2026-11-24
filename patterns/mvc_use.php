@@ -1,8 +1,11 @@
 <?php
+declare(strict_types=1);
+
 spl_autoload_register();
 
 use MVC\Controllers\Controller;
 
-//$obj = new Controller('users.rss');
-$obj = new Controller('users/1.html');
+header('Content-Type: text/plain; charset=utf-8');
+
+$obj = new Controller('users.markdown');
 echo $obj->render();
